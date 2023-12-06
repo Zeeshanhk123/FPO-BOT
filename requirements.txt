@@ -1,8 +1,9 @@
-slack-sdk==3.26.1
-Flask==2.3.3
-slackeventsapi==3.0.1
-python-dotenv==1.0.0
+pip install slack-sdk==3.26.1
+pip install Flask==2.3.3
+pip install slackeventsapi==3.0.1
+pip install python-dotenv==1.0.0
 
 pip install --upgrade pip
 pip install -r requirements.txt
-gunicorn==21.2.0
+pip install gunicorn==21.2.0
+
