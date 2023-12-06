@@ -2,7 +2,11 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 from slack_sdk import WebClient
+# <<<<<<< HEAD
 from flask import Flask, request, Response
+# =======
+from flask import Flask, request,Response
+# >>>>>>> 97a2b4c7444760b21f1f890e28270f405be3f293
 from slackeventsapi import SlackEventAdapter
 
 env_path = Path('.') / '.env'
@@ -22,12 +26,21 @@ def message(payload):
         channel_id = event.get('channel')
         text = event.get('text')
 
+# <<<<<<< HEAD
         # if BOT_ID != user_id:
         #     client.chat_postMessage(channel=channel_id, text=text)
     # except Exception as e:
         # print(f"Error handling message event: {e}")
 
 @app.route("/message-count", methods=['POST'])
+
+    #     if BOT_ID != user_id:
+    #         client.chat_postMessage(channel=channel_id, text=text)
+    # except Exception as e:
+    #     print(f"Error handling message event: {e}")
+
+@app.route("/po-number", methods=['POST'])
+# >>>>>>> 97a2b4c7444760b21f1f890e28270f405be3f293
 def message_count():
     try:
         data = request.form
@@ -36,7 +49,12 @@ def message_count():
         
         alphanumeric_code = generate_code()  # Keep the generated code in alphanumeric_code
         if BOT_ID != user_id:
+# <<<<<<< HEAD
             client.chat_postMessage(channel=channel_id, text=f"FPO0000:{alphanumeric_code}")
+# =======
+            client.chat_postMessage(channel=channel_id, text=f"FPO-0{alphanumeric_code}")
+
+# >>>>>>> 97a2b4c7444760b21f1f890e28270f405be3f293
 
         return Response(), 200
     except Exception as e:
@@ -47,13 +65,20 @@ def message_count():
 
 txt_path = "text/file.txt"
 
+# <<<<<<< HEAD
 # send to txt file
+# =======
+# send to txt file
+# >>>>>>> 97a2b4c7444760b21f1f890e28270f405be3f293
 def post_to_text(alphanumeric_code):
     with open(txt_path , 'w') as file:
         file.write(f'{alphanumeric_code}\n')  # Use alphanumeric_code instead of current_number
 
-# read from the text file 
-# read from the text file 
+# read from the text file
+# <<<<<<< HEAD
+# read from the text file
+# =======
+# >>>>>>> 97a2b4c7444760b21f1f890e28270f405be3f293
 def read_counter():
     try:
         with open(txt_path, 'r') as file:
@@ -68,8 +93,11 @@ def read_counter():
         return 0
 
 
-# increment from the previous one by reading from the text file 
-# increment from the previous one by reading from the text file 
+# increment from the previous one by reading from the text file
+# <<<<<<< HEAD
+# increment from the previous one by reading from the text file
+# =======
+# >>>>>>> 97a2b4c7444760b21f1f890e28270f405be3f293
 def generate_code():
     try:
         current_number = read_counter()
@@ -82,5 +110,9 @@ def generate_code():
 
 
 # if __name__ == '__main__':
+# <<<<<<< HEAD
 #     app.run(debug=True)
 
+# =======
+#    app.run(debug=True)
+# >>>>>>> 97a2b4c7444760b21f1f890e28270f405be3f293

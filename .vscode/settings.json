@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
     "cSpell.words": [
         "slackeventsapi"
     ]
+=======
+    "git.ignoreLimitWarning": true
+>>>>>>> 97a2b4c7444760b21f1f890e28270f405be3f293
 }
