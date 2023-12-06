@@ -1,5 +1,5 @@
-slack-sdk==3.10.0
-Flask==2.0.1
-slackeventsapi==2.6.0
-python-dotenv==0.19.1
+slack-sdk==3.26.1
+Flask==2.3.3
+slackeventsapi==3.0.1
+python-dotenv==1.0.0
 
