@@ -36,7 +36,7 @@ def message_count():
         
         alphanumeric_code = generate_code()  # Keep the generated code in alphanumeric_code
         if BOT_ID != user_id:
-            client.chat_postMessage(channel=channel_id, text=f"FPO0000:{alphanumeric_code}")
+            client.chat_postMessage(channel=channel_id, text=f"FPO-0{alphanumeric_code}")
 
         # Move these lines inside the route context
         # if response != 200:
